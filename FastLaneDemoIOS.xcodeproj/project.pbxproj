@@ -15,6 +15,7 @@
 		ED2DEEC920E6A1CE00F50AA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2DEEC720E6A1CE00F50AA6 /* LaunchScreen.storyboard */; };
 		ED2DEED420E6A1CF00F50AA6 /* FastLaneDemoIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DEED320E6A1CF00F50AA6 /* FastLaneDemoIOSTests.swift */; };
 		ED2DEEDF20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DEEDE20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests.swift */; };
+		ED2DEEED20E6A39500F50AA6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DEEEC20E6A39500F50AA6 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		ED2DEEDA20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastLaneDemoIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2DEEDE20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastLaneDemoIOSUITests.swift; sourceTree = "<group>"; };
 		ED2DEEE020E6A1CF00F50AA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2DEEEC20E6A39500F50AA6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		ED2DEEDD20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests */ = {
 			isa = PBXGroup;
 			children = (
+				ED2DEEEC20E6A39500F50AA6 /* SnapshotHelper.swift */,
 				ED2DEEDE20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests.swift */,
 				ED2DEEE020E6A1CF00F50AA6 /* Info.plist */,
 			);
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED2DEEDF20E6A1CF00F50AA6 /* FastLaneDemoIOSUITests.swift in Sources */,
+				ED2DEEED20E6A39500F50AA6 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
