@@ -19,34 +19,27 @@ platform :ios do
   desc "Description of what the lane does"
   lane :beta do
     cert
-    sigh(force: true)
+    sigh
+
+    # Increment the build number (not the version number)
+    increment_build_number(
+      build_number: latest_testflight_build_number + 1,
+      xcodeproj: "FastLaneDemoIOS.xcodeproj"
+    )
+
     build_app
     
     run_tests(scheme: "FastLaneDemoIOS")
 
-    # Increment the build number (not the version number)
-    # Providing the xcodeproj is optional
-    increment_build_number(xcodeproj: "FastLaneDemoIOS.xcodeproj")
-
-    # Commit the version bump
-    commit_version_bump(xcodeproj: "FastLaneDemoIOS.xcodeproj")
-
-    # Add a git tag for this build. This will automatically
-    # use an appropriate git tag name
-    add_git_tag
-
-    # Push the new commit and tag back to your git remote
-    push_to_git_remote
+    skip_waiting_for_build_processing
 
     upload_to_testflight
-
-    skip_waiting_for_build_processing
+    
   end
 
   lane :screenshots do
     capture_screenshots
-    frame_screenshots(white: true)
-    upload_to_app_store
+    # frame_screenshots(white: true)
   end
 
 end
