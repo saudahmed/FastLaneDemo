@@ -22,8 +22,7 @@ platform :ios do
     sigh(force: true)
     build_app
     
-    # Ensure that your git status is not dirty
-    ensure_git_status_clean
+    run_tests(scheme: "FastLaneDemoIOS")
 
     # Increment the build number (not the version number)
     # Providing the xcodeproj is optional
@@ -39,13 +38,15 @@ platform :ios do
     # Push the new commit and tag back to your git remote
     push_to_git_remote
 
-    increment_build_number(
-      build_number: latest_testflight_build_number + 1,
-      xcodeproj: "FastLaneDemoIOS.xcodeproj"
-    )
-
     upload_to_testflight
 
     skip_waiting_for_build_processing
   end
+
+  lane :screenshots do
+    capture_screenshots
+    frame_screenshots(white: true)
+    upload_to_app_store
+  end
+
 end
